@@ -10,7 +10,13 @@ const TourList = (props) => {
         <div className="underline"></div>
       </div>
       <div>
-        <h1>Hello</h1>
+      {tours.length > 0 ? (
+          tours.map((tour) => (
+            <Tour key={tour.id} tour={tour} removeTour={removeTour} />
+          ))
+        ) : (
+          <h3>No Tours Left</h3>
+        )}
       </div>
     </section>
   );
